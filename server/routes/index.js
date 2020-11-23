@@ -4,7 +4,7 @@ const authRouter = require('./auth');
 
 const router = express.Router();
 
-router.use('/auth', authRouter)
+router.use('/auth', authRouter) //auth라는 router가 들어오면 authRouter로 보내주겠다.   
 
 router.get('/', (req,res)=>{
     res.send('Hello World!');
