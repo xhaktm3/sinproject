@@ -11,6 +11,6 @@ app.use(express.static('static')); //static middleware 자동으로 라우팅없
 app.set('views', __dirname + '/static');
 //app.engine('html', ejs.renderFile);
 
-const server = app.listen(8000, () => {
+const server = app.listen(8080, () => {
     console.log("We made a server!");
 })
