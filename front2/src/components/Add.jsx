@@ -28,6 +28,7 @@ class Add extends Component {
         })
           .then(response => response.json())
           .then(response => {
+            console.log(response);
             if (response.user.username) {
               console.log(response.user.username);
               this.setState({
