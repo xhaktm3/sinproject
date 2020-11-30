@@ -89,10 +89,6 @@ class Add extends Component {
   }
 
     render() {
-    if(localStorage.getItem('token')===NULL){
-      alert("You have to log-in!")
-      this.props.history.push("/")
-    }
     const {appChange, appClick1, appClick2} = this;
     return (
       <div className="Add">
