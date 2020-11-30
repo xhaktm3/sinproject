@@ -24,7 +24,7 @@
   color: rgb(0, 0, 0);
 }
 
-button {
+.App-login {
   text-align: center;
   width: 120px;
   height: 40px; 
@@ -37,7 +37,24 @@ button {
   top: 30px;
   
 }
-button:focus{
+.App-login:focus{
+  outline: 0;
+}
+
+.App-signup {
+  text-align: center;
+  width: 90px;
+  height: 30px; 
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  position: relative;
+  top: 30px;
+}
+
+.App-signup:focus{
   outline: 0;
 }
 
