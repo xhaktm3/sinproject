@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './Add.css';
+import logo from '../addlogo.svg';
 
 class Add extends Component {
 
@@ -27,6 +28,7 @@ class Add extends Component {
           .then(response => response.json())
           .then(response => {
             if (response.user.username) {
+              console.log(response.user.username);
               this.setState({
               username : response.user.username});
             } else if (!response.user.username) {
@@ -43,6 +45,7 @@ class Add extends Component {
       }
 
     appClick1 = () =>{
+    console.log(this.state.username);
     fetch('http://whale.sparcs.org:52313/api/add/create',{
           method: "POST",
           headers: {'Content-type': 'application/json'},
@@ -68,7 +71,7 @@ class Add extends Component {
           method: "POST",
           headers: {'Content-type': 'application/json'},
           body: JSON.stringify({
-            planname : this.state.planname,
+            planname : this.state.joinplan,
             username : this.state.username,
           }),
         })
@@ -76,7 +79,7 @@ class Add extends Component {
           .then(response => {
             if (response.ok) {
               this.props.history.push("/main");
-            } else if (!response) {
+            } else if (!response.ok) {
               alert("No planname exists");
               this.props.history.push("/add");
             }
@@ -91,8 +94,13 @@ class Add extends Component {
           <h1>
             BAP-YAK
           </h1>
+          <Link to="/main">
+            <img src={logo} className="Add-logo" alt="logo" />
+          </Link>
           <div>
             <input placeholder="BAB-YAK name" name="addplan" type="text" value={this.state.addplan} onChange={appChange}/>
+          </div>
+          <div>
             <input placeholder="food name" name="foodname" type="text" value={this.state.foodname} onChange={appChange}/>
           </div>
           <div>
@@ -101,7 +109,7 @@ class Add extends Component {
             </button>
           </div>
           <div>
-            <input placeholder="BAB-YAK name" name="joinplan" type="text" value={this.state.password} onChange={appChange}/>
+            <input placeholder="BAB-YAK name" name="joinplan" type="text" value={this.state.joinplan} onChange={appChange}/>
           </div>
           <div>
             <button className="plan2" onClick ={appClick2}> 

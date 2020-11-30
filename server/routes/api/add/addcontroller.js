@@ -42,7 +42,6 @@ exports.joinPlan = async (req, res) => {
         res.status(401).json({ message: 'plan not exist' });
         return;
     }
-    
     let plan = null;
     try {
         plan = await Plan.joinPlan(req.body.planname, req.body.username);

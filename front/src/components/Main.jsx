@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './Main.css';
-import logo from './logo.svg';
+import logo from '../mainlogo.svg';
 
 class Main extends Component {
 
@@ -39,10 +39,12 @@ home = () =>{
           <Link to="/add">
             <img src={logo} className="Main-logo" alt="logo" />
           </Link>
-          <div>
-            {this.state.list.map(e => <div>{e.planname} : Eat {e.foodname} with {e.group.join(",")}</div>)}
-          </div>
         </header>
+        <body className="Main-body">
+          <div>
+            {this.state.list.map(e => <div><h1>"{e.planname}"</h1> We eat <strong>{e.foodname}</strong> with {e.group.join(" , ")}</div>)}
+          </div>
+        </body>
       </div> 
     );
   }
