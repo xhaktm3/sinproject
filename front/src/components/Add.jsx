@@ -27,7 +27,9 @@ class Add extends Component {
           .then(response => response.json())
           .then(response => {
             if (response.user.username) {
-              this.state.username = response.user.username;
+              console.log(response.user.username);
+              this.setState({
+              username : response.user.username});
             } else if (!response.user.username) {
               alert("You have to log-in!");
               this.props.history.push("/");
@@ -42,6 +44,7 @@ class Add extends Component {
       }
 
     appClick1 = () =>{
+    console.log(this.state.username);
     fetch('http://localhost:8080/api/add/create',{
           method: "POST",
           headers: {'Content-type': 'application/json'},
@@ -63,6 +66,7 @@ class Add extends Component {
     }
 
     appClick2 = () =>{
+    console.log(this.state.username);
     fetch('http://localhost:8080/api/add/join',{
           method: "POST",
           headers: {'Content-type': 'application/json'},

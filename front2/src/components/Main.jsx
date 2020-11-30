@@ -14,7 +14,7 @@ componentDidMount() {
 }
 
 home = () =>{
-    fetch('http://localhost:8080/api/add/show',{
+    fetch('http://whale.sparcs.org:52313/api/add/show',{
           method: "GET",
           headers: {'Content-type': 'application/json'},
         })

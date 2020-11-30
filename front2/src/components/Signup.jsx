@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './Signup.css';
 
 class Signup extends Component {
@@ -22,7 +22,7 @@ class Signup extends Component {
 
   //회원가입 시도 액션
   appClick = () =>{
-    fetch('http://localhost:8080/api/auth/signup',{
+    fetch('http://whale.sparcs.org:52313/api/auth/signup',{
           method: "POST",
           headers: {'Content-type': 'application/json'},
           body: JSON.stringify({
