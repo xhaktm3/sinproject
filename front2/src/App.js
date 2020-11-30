@@ -44,6 +44,7 @@ class App extends Component {
   }
 
   render() {
+    localStorage.clear();
     const {appChange, appClick, appEnter} = this;
     return (
       <div className="App">
