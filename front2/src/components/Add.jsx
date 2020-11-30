@@ -18,6 +18,7 @@ class Add extends Component {
 
 
     getUser = () =>{
+        console.log(localStorage.token)
         fetch('http://whale.sparcs.org:52313/api/auth/check',{
           method: "POST",
           headers: {'Content-type': 'application/json'},
